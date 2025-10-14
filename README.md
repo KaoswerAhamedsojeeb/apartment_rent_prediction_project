@@ -5,11 +5,11 @@ This end-to-end project uses **Flask**, **Python**, and **ML models** built with
 
 ---
 
-## 📋 Project Overview
+## Project Overview
 
 This project demonstrates the **complete software engineering workflow** — from data creation and analysis to model training and deployment using a Flask web app.
 
-### 🎯 Objective
+### Objective
 Predict the monthly rent (in Taka) for an apartment based on the following features:
 - `total_area` — total apartment area (sq. ft.)
 - `no_of_bedroom` — number of bedrooms
