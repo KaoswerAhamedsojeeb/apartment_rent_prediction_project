@@ -5,10 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>house rent prediction</title>
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 
 <body>
-    <h2>this program will give you an idea about house rent prediction of USN</h2>
+    <h1>House Rent Prediction Of USN</h1>
+    <div class="container">
+        <form action="">
+            <div>
+                <label for="city">City:</label>
+                <select name="city_name" id="city">
+                    <option value="noakhali">Noakhali</option>
+                    <option value="lakshmipur">Lakshmipur</option>
+                    <option value="feni">Feni</option>
+                    <option value="raipur">Raipur</option>
+                </select>
+            </div>
+            <div>
+                <label for="area">Area:</label>
+                <input type="text" id="area" name="area" required>
+            </div>
+            <div>
+                <label for="bedroom">No of bedroom:</label>
+                <select name="no_bedroom" id="bedroom">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+
+                </select>
+            </div>
+            <div>
+                <label for="bathroom">No of bathroom:</label>
+                <select name="no_bathroom" id="bathroom">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+
+                </select>
+            </div>
+            <div>
+                <label for="balcony">No of balcony:</label>
+                <select name="no_balcony" id="balcony">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+
+                </select>
+            </div>
+
+
+            <div>
+                <label for="tiles">Tiles:</label>
+                <select name="tiles" id="tiles">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+            </div>
+            <br>
+            <div>
+                input: <input type="submit" value="Predict Rent">
+            </div>
+        </form>
+    </div>
+
 </body>
 
 </html>
