@@ -4,78 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>house rent prediction</title>
-    <link rel="stylesheet" href="../static/css/style.css">
+    <title>USN House Rent Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </head>
 
 <body>
-    <h1>House Rent Prediction Of USN</h1>
+    <h1>USN House Rent Prediction</h1>
     <div class="container">
-        <form action="">
+        <form id="rentForm" action="/predict" method="POST">
             <div>
                 <label for="city">City:</label>
-                <select name="city_name" id="city">
+                <select name="city" id="city" required>
                     <option value="noakhali">Noakhali</option>
                     <option value="lakshmipur">Lakshmipur</option>
                     <option value="feni">Feni</option>
                     <option value="raipur">Raipur</option>
                 </select>
             </div>
+
             <div>
-                <label for="area">Area:</label>
-                <input type="text" id="area" name="area" required>
+                <label for="area">Total Area (sqft):</label>
+                <input type="number" id="area" name="area" required placeholder="Enter area between 400–2000">
             </div>
+
             <div>
-                <label for="bedroom">No of bedroom:</label>
-                <select name="no_bedroom" id="bedroom">
+                <label for="bedroom">No. of Bedrooms:</label>
+                <select name="no_bedroom" id="bedroom" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="bathroom">No. of Bathrooms:</label>
+                <select name="no_bathroom" id="bathroom" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="balcony">No. of Balconies:</label>
+                <select name="balcony" id="balcony" required>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-
                 </select>
             </div>
-            <div>
-                <label for="bathroom">No of bathroom:</label>
-                <select name="no_bathroom" id="bathroom">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-
-                </select>
-            </div>
-            <div>
-                <label for="balcony">No of balcony:</label>
-                <select name="no_balcony" id="balcony">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-
-                </select>
-            </div>
-
 
             <div>
                 <label for="tiles">Tiles:</label>
-                <select name="tiles" id="tiles">
+                <select name="tiles" id="tiles" required>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
+                </select>
             </div>
-            <br>
-            <div>
-                input: <input type="submit" value="Predict Rent">
-            </div>
+
+            <input type="submit" value="Predict Rent">
         </form>
     </div>
 
+    <div class="result">
+        {% if prediction %}
+        <h2>{{ prediction }}</h2>
+        {% elif error %}
+        <h2 style="color:red;">{{ error }}</h2>
+        {% endif %}
+    </div>
 </body>
 
 </html>
