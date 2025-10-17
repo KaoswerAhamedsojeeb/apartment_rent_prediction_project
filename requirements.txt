@@ -1,7 +1,12 @@
-flask
-pandas
-numpy
-scikit-learn 
-matplotlib
-seaborn
-xgboost
+# USN House Rent Prediction
+# Python 3.12.1
+
+
+
+flask==3.1.2
+pandas==2.2.3
+numpy==2.3.3
+scikit-learn==1.7.2
+matplotlib==3.10.0
+seaborn==0.13.2
+xgboost==3.0.5
