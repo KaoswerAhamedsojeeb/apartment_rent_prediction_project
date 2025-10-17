@@ -26,10 +26,10 @@ def predict():
             city=city
         )
 
-        return render_template('index.html', prediction=f"Predicted Rent: {predicted_rent} BDT")
+        return render_template('index.html', prediction=f"Predicted Rent: {predicted_rent:.2f} BDT")
 
     except Exception as e:
-        return render_template('index.html', error=f"⚠️ Error: {e}")
+        return render_template('index.html', error=f" Error: {e}")
 
 if __name__ == "__main__":
     app.run(debug=True)

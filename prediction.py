@@ -11,9 +11,9 @@ try:
         model = pickle.load(f)
     with open(encoder_path, "rb") as f:
         encoder = pickle.load(f)
-    print("✅ Model and encoder loaded successfully!")
+    print("Model and encoder loaded successfully!")
 except Exception as e:
-    print(f"⚠️ Error loading model or encoder: {e}")
+    print(f"Error loading model or encoder: {e}")
 
 
 # === Main Prediction Function ===
@@ -53,7 +53,7 @@ def predict_rent(total_area, no_of_bed_room, no_of_bath_room, tiles, balcony, ci
 
     # Predict
     predicted_rent = model.predict(input_df)[0]
-    return round(predicted_rent, 2)
+    return round(predicted_rent,1)
 
 
 # === Optional test ===
